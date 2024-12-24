@@ -1,19 +1,17 @@
 import React from 'react'
 import './header.css'
 
-const Header = () => {
-// const headerStyle = {
-//     color: '#3A3636'
-// }
+const Header = ({title}) => {
 
   return (
-    <header>
-        <h1>My Tasks</h1>
+    <header className='header'>
+        <h1>{title}</h1>
     </header>
   )
 }
 
-//style = " grgirhgi"
-//style = {{backgroubsberr:}}
+Header.defaultProps = {
+  title: 'My Task'
+}
 
 export default Header

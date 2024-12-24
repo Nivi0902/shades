@@ -1,8 +1,24 @@
-import React from 'react'
+import { MdDeleteOutline } from "react-icons/md";
 
-const Listitem = () => {
+
+const Listitem = ({tasks,handleCheck,handleDelete}) => {
+
   return (
-    <div>Listitem</div>
+    <ul>
+      {tasks.map((task) => (
+          <li className='item' key={task.id}>
+          <input 
+          type='checkbox' 
+          checked={task.checked}
+          onChange={() => handleCheck(task.id)}
+          />
+          <label>{task.task}</label>
+          <button 
+          onClick={() => handleDelete(task.id)}
+          ><MdDeleteOutline /></button>
+          </li>
+      ))}
+    </ul>
   )
 }
 

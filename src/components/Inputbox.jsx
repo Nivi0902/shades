@@ -1,8 +1,21 @@
-import React from 'react'
+import { FaPlus } from 'react-icons/fa'
 
-const Inputbox = () => {
+const Inputbox = ({handleSubmit,newTask,setNewTask}) => {
+
   return (
-    <div>Inputbox</div>
+    <form id='addForm' onSubmit={handleSubmit}> 
+      <input
+      id='addtaskinput' 
+      autoFocus
+      type='text'
+      placeholder='Add task'
+      value={newTask}
+      onChange={(e) => setNewTask(e.target.value)}
+      required/>
+      <button 
+      type='submit'
+      className='submitbtn'><FaPlus/></button>
+    </form>
   )
 }
 

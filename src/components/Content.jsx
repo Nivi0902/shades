@@ -1,29 +1,22 @@
 import React from 'react'
+import Inputbox from './Inputbox'
+import Listitem from './Listitem'
 
-const Content = () => {
-
-    function handleNameChange(){
-        const names = ['Learn', 'Master', 'Try'];
-        const random = Math.floor(Math.random() * 3);
-        return(names[random])
-    }
-
-    function handleClick(name){
-        console.log(name)
-    }
-
+const Content = ({tasks,handleCheck,handleDelete,handleSubmit,newTask,setNewTask}) => {
   return (
     <main>
-        <p>Lets {handleNameChange()} React</p>
-        <button onClick={() => handleClick("Nivi")}>Click me</button>
+      <Inputbox
+            handleSubmit = {handleSubmit}
+            newTask = {newTask}
+            setNewTask = {setNewTask}
+      />
+      <Listitem
+            tasks = {tasks}
+            handleCheck ={handleCheck}
+            handleDelete ={handleDelete}
+            />
     </main>
   )
 }
 
 export default Content
-
-
-//function update(a,b){
-// a+b
-// }
-//update(10,20)
